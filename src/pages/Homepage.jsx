@@ -29,6 +29,7 @@ const Homepage = () => {
           SM<PurpleDot>.</PurpleDot>
         </NavLogo>
         <NavLinks>
+          <li>About me</li>
           <li>Work</li>
           <li>Blog</li>
           <li>Contact</li>
@@ -88,7 +89,7 @@ const Container = styled.div`
   position: relative;
   height: 100vh;
   width: 100%;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.4);
 `
 
 const Header = styled.nav`
@@ -123,7 +124,7 @@ const NavLinks = styled.ul`
     display: inline-block;
 
     &:not(:last-child) {
-      margin-right: 3rem;
+      margin-right: 3.2rem;
     }
   }
 `
@@ -186,13 +187,13 @@ const SocialLinks = styled.div`
 
 const Right = styled.div`
   display: flex;
-
+  justify-content: center;
   width: 40%;
 `
 
 const Info = styled.div`
   margin-top: 1rem;
-  margin-left: auto;
+
   width: 60%;
   p {
     color: #cecece;

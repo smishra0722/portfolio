@@ -1,7 +1,6 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
-import Three from './pages/Three'
 
 // Debug
 const gui = new dat.GUI()
@@ -124,7 +123,7 @@ export const runCanvas = () => {
 
   const tick = () => {
     const elapsedTime = clock.getElapsedTime()
-    particlesMesh.rotation.y = -0.1 * elapsedTime
+    particlesMesh.rotation.y = 0.08 * elapsedTime
     // Update objects
     // sphere.rotation.y = 0.5 * elapsedTime
     // if (mouseX > 0) {
