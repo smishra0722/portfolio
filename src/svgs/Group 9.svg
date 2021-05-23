@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="296.241" height="220" viewBox="0 0 296.241 220">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f20b53;
+      }
+    </style>
+  </defs>
+  <g id="Group_9" data-name="Group 9" transform="translate(-1545.113 -970)">
+    <rect id="Rectangle_24" data-name="Rectangle 24" class="cls-1" width="131" height="84" transform="matrix(-0.017, 1, -1, -0.017, 1841.354, 1049.57)"/>
+    <rect id="Rectangle_22" data-name="Rectangle 22" class="cls-1" width="131" height="84" transform="matrix(-0.017, 1, -1, -0.017, 1631.386, 1045.905)"/>
+    <rect id="Rectangle_23" data-name="Rectangle 23" class="cls-1" width="220" height="84" transform="translate(1735.801 970) rotate(90)"/>
+  </g>
+</svg>
