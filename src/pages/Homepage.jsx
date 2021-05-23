@@ -152,6 +152,7 @@ const Left = styled.div`
   width: 50%;
 `
 const Title = styled.div`
+  /* border-right: 1px solid white; */
   position: relative;
   font-weight: 700;
   font-size: 10rem;
@@ -194,16 +195,17 @@ const Right = styled.div`
 const Info = styled.div`
   margin-top: 1rem;
 
-  width: 60%;
+  width: 70%;
   p {
     color: #cecece;
     font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
   }
   h3 {
     margin-top: 1rem;
     margin-bottom: 2rem;
     line-height: 90%;
-    font-size: 2rem;
+    font-size: 2.1rem;
     font-weight: 600;
     font-family: 'Source Sans Pro', sans-serif;
   }
@@ -212,7 +214,7 @@ const Info = styled.div`
     color: #f20b53;
     button {
       all: unset;
-
+      font-size: 1.2rem;
       border-bottom: 1px solid #f20b53;
       text-decoration: none;
       margin-top: 2rem;
