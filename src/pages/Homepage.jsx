@@ -13,6 +13,7 @@ const Homepage = () => {
   }, [])
   return (
     <Container>
+      <WorkInProgress>Work in Porgress</WorkInProgress>
       <canvas
         class='webgl'
         style={{
@@ -221,4 +222,16 @@ const Info = styled.div`
       margin-left: 0.5rem;
     }
   }
+`
+
+/// WIP
+const WorkInProgress = styled.div`
+  position: absolute;
+  background-color: #f20b53;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
 `

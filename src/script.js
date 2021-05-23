@@ -126,14 +126,14 @@ export const runCanvas = () => {
     const elapsedTime = clock.getElapsedTime()
     particlesMesh.rotation.y = -0.1 * elapsedTime
     // Update objects
-    sphere.rotation.y = 0.5 * elapsedTime
-    if (mouseX > 0) {
-      particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00008)
-      particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00008)
-    }
+    // sphere.rotation.y = 0.5 * elapsedTime
+    // if (mouseX > 0) {
+    //   particlesMesh.rotation.x = -mouseY * (elapsedTime * 0.00008)
+    //   particlesMesh.rotation.y = -mouseX * (elapsedTime * 0.00008)
+    // }
 
     // Update Orbital Controls
-    controls.update()
+    // controls.update()
 
     //   Render
     renderer.render(scene, camera)
