@@ -14,7 +14,7 @@ export const runCanvas = () => {
   const scene = new THREE.Scene()
 
   // Objects
-  const geometry = new THREE.TorusGeometry(0.7, 0.2, 16, 100)
+  //   const geometry = new THREE.TorusGeometry(0.7, 0.2, 16, 100)
   const particlesGeometry = new THREE.BufferGeometry()
   const particlesCnt = 4000
 
@@ -23,7 +23,7 @@ export const runCanvas = () => {
   for (let i = 0; i < particlesCnt * 3; i++) {
     posArray[i] = (Math.random() - 0.5) * 5
   }
-  console.log(posArray)
+  //   console.log(posArray)
 
   particlesGeometry.setAttribute(
     'position',
@@ -32,16 +32,16 @@ export const runCanvas = () => {
 
   // Materials
 
-  const material = new THREE.PointsMaterial({
-    size: 0.007,
-  })
+  //   const material = new THREE.PointsMaterial({
+  //     size: 0.007,
+  //   })
   const particlesMaterial = new THREE.PointsMaterial({
     size: 0.007,
   })
   // material.color = new THREE.Color(0xff0000)
 
   // Mesh
-  const sphere = new THREE.Points(geometry, material)
+  //   const sphere = new THREE.Points(geometry, material)
   const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial)
   scene.add(particlesMesh)
 
@@ -61,7 +61,7 @@ export const runCanvas = () => {
     height: window.innerHeight,
   }
 
-  console.log('hehe', sizes.width, canvas)
+  //   console.log('hehe', sizes.width, canvas)
 
   const renderer = new THREE.WebGLRenderer({
     canvas: canvas,
@@ -70,15 +70,15 @@ export const runCanvas = () => {
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
   //mouse
-  document.addEventListener('mousemove', animateParticles)
+  //   document.addEventListener('mousemove', animateParticles)
 
-  let mouseX = 0
-  let mouseY = 0
+  //   let mouseX = 0
+  //   let mouseY = 0
 
-  function animateParticles(event) {
-    mouseY = event.clientY
-    mouseX = event.clientX
-  }
+  //   function animateParticles(event) {
+  //     mouseY = event.clientY
+  //     mouseX = event.clientX
+  //   }
 
   window.addEventListener('resize', () => {
     // Update sizes
