@@ -1,30 +1,78 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Navbar from '../components/Navbar'
+import { runCanvas } from '../script'
 import { ReactComponent as BottomImage } from '../svgs/BottomCircle.svg'
 import { ReactComponent as RightOval } from '../svgs/RightOval.svg'
 import { ReactComponent as User } from '../svgs/user.svg'
 
 import { motion } from 'framer-motion'
 const Homepage = () => {
+  useEffect(() => {
+    runCanvas()
+  }, [])
   return (
     <Container>
-      <Navbar />
-      <Line />
-
-      <TitlePlace>
-        <Name>Shivam Mishra</Name>
-        <Designation>FRONT END DEVELOPER</Designation>
-      </TitlePlace>
-      <SVGPart>
-        <User style={{ height: '100%' }} />
-      </SVGPart>
-      <BottomCircle whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-        <BottomImage />
-      </BottomCircle>
-      <RightOvalSVG whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-        <RightOval />
-      </RightOvalSVG>
+      <canvas
+        class='webgl'
+        style={{
+          position: 'fixed',
+          top: '0',
+          left: '0',
+          outline: 'none',
+          zIndex: -1,
+        }}
+      ></canvas>
+      <Header>
+        <NavLogo>
+          SM<PurpleDot>.</PurpleDot>
+        </NavLogo>
+        <NavLinks>
+          <li>Work</li>
+          <li>Blog</li>
+          <li>Contact</li>
+        </NavLinks>
+      </Header>
+      <MainSection>
+        <Left>
+          <Title>
+            Shivam
+            <br /> Mishra<PurpleDot>.</PurpleDot>
+          </Title>
+          <SocialLinks>
+            <div>
+              <a href=''>
+                <i class='fab fa-linkedin'></i>
+              </a>
+            </div>
+            <div>
+              <a href=''>
+                <i class='fab fa-github'></i>
+              </a>
+            </div>
+            <div>
+              <a href=''>
+                <i class='fab fa-instagram-square'></i>
+              </a>
+            </div>
+          </SocialLinks>
+        </Left>
+        <Right>
+          <Info>
+            <p>- Introduction</p>
+            <h3>Front end developer, Designer, Mumbai.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              reiciendis facere nam aliquam hic, nulla quasi natus temporibus
+              perferendis exc
+            </p>
+            <div>
+              <button href=''>Resume</button>
+              <i class='fas fa-arrow-right'></i>
+            </div>
+          </Info>
+        </Right>
+      </MainSection>
     </Container>
   )
 }
@@ -32,67 +80,145 @@ const Homepage = () => {
 export default Homepage
 
 const Container = styled.div`
+  color: #f5f5f5;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background-color: #140444;
+  align-items: center;
+  position: relative;
   height: 100vh;
   width: 100%;
-  overflow: hidden;
+  background-color: transparent;
+`
+
+const Header = styled.nav`
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 20%;
+  background: transparent;
+`
+
+const NavLogo = styled.div`
+  font-size: 5rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 700;
+  color: #f5f5f5;
+`
+
+const NavLinks = styled.ul`
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
+  color: #f5f5f5;
+  list-style: none;
+
+  li {
+    display: inline-block;
+
+    &:not(:last-child) {
+      margin-right: 3rem;
+    }
+  }
+`
+
+const MainSection = styled.div`
+  padding-top: 5rem;
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 1440px;
+  height: 80%;
+
+  display: flex;
+  justify-content: space-between;
+`
+
+const PurpleDot = styled.span`
+  color: #6c63ff;
+`
+
+const Left = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #f5f5f5;
+  width: 50%;
+`
+const Title = styled.div`
   position: relative;
+  font-weight: 700;
+  font-size: 10rem;
+  line-height: 90%;
+  font-family: 'Source Sans Pro', sans-serif;
+
+  &:after {
+    position: absolute;
+    bottom: -1.7rem;
+    left: 0.5rem;
+    content: '';
+    height: 10px;
+    width: 20%;
+    background-color: #6c63ff;
+    border-radius: 2px;
+  }
 `
 
-const BottomCircle = styled(motion.div)`
-  position: absolute;
-  left: -4rem;
-  bottom: -25rem;
-`
-const RightOvalSVG = styled(motion.div)`
-  position: absolute;
-  right: -4rem;
-  top: -3rem;
-`
-
-const SVGPart = styled.div`
-  height: 60vh;
-  width: 60%;
-  position: absolute;
-  top: 60%;
-  left: 85vw;
-  transform: translate(-50%, -70%);
+const SocialLinks = styled.div`
+  margin-left: 0.5rem;
+  display: flex;
+  font-size: 2rem;
+  a {
+    text-decoration: none;
+    color: #f5f5f5;
+  }
+  div {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
 `
 
-const TitlePlace = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 30%;
-  transform: translate(-50%, -50%);
+const Right = styled.div`
+  display: flex;
 
-  height: 40vh;
   width: 40%;
 `
 
-const Name = styled.div`
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 10rem;
-  font-weight: 700;
-  color: #f20b53;
-  line-height: 85%;
-`
-
-const Designation = styled.div`
-  font-family: 'Source Sans Pro', sans-serif;
-  font-size: 4rem;
-  font-weight: 700;
-  color: #f5f5f5;
-  line-height: 85%;
+const Info = styled.div`
   margin-top: 1rem;
-`
+  margin-left: auto;
+  width: 60%;
+  p {
+    color: #cecece;
+    font-family: 'Open Sans', sans-serif;
+  }
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    line-height: 90%;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  div {
+    font-weight: 700;
+    color: #f20b53;
+    button {
+      all: unset;
 
-const Line = styled.div`
-  height: 2px;
-  width: 100%;
-  background-color: #f5f5f5;
-  position: absolute;
-  top: 71%;
+      border-bottom: 1px solid #f20b53;
+      text-decoration: none;
+      margin-top: 2rem;
+      font-family: 'Open Sans', sans-serif;
+    }
+    i {
+      font-size: 0.7rem;
+      margin-left: 0.5rem;
+    }
+  }
 `
