@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import Navbar from '../components/Navbar'
 import { runCanvas } from '../script'
-import { ReactComponent as BottomImage } from '../svgs/BottomCircle.svg'
-import { ReactComponent as RightOval } from '../svgs/RightOval.svg'
-import { ReactComponent as User } from '../svgs/user.svg'
+// import { ReactComponent as BottomImage } from '../svgs/BottomCircle.svg'
+// import { ReactComponent as RightOval } from '../svgs/RightOval.svg'
+// import { ReactComponent as User } from '../svgs/user.svg'
 import { motion } from 'framer-motion'
 
 const Homepage = () => {
@@ -12,116 +12,147 @@ const Homepage = () => {
     runCanvas()
   }, [])
   return (
-    <Container>
-      <WorkInProgress>Work in Porgress</WorkInProgress>
-      <canvas
-        class='webgl'
-        style={{
-          position: 'fixed',
-          top: '0',
-          left: '0',
-          outline: 'none',
-          zIndex: -1,
-        }}
-      ></canvas>
-      <Header>
-        <NavLogo>
-          SM<PurpleDot>.</PurpleDot>
-        </NavLogo>
-        <NavLinks>
-          <li>About me</li>
-          <li>Work</li>
-          <li>Blog</li>
-          <li>Contact</li>
-        </NavLinks>
-      </Header>
-      <MainSection>
-        <Left>
-          <Title>
-            <motion.p
-              initial={{ y: '100px', opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              Shivam
-            </motion.p>
+    <div>
+      <Container>
+        <WorkInProgress>Work in Porgress</WorkInProgress>
+        <canvas
+          class='webgl'
+          style={{
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            outline: 'none',
+            zIndex: -1,
+          }}
+        ></canvas>
+        <Header>
+          <NavLogo>
+            SM<PurpleDot>.</PurpleDot>
+          </NavLogo>
+          <NavLinks>
+            <li>About me</li>
+            <li>Work</li>
+            <li>Blog</li>
+            <li>Contact</li>
+          </NavLinks>
+        </Header>
+        <MainSection>
+          <motion.div
+            style={{
+              width: '100%',
+              position: 'absolute',
+              top: '30%',
+              left: '0',
+              height: '300px',
+              fontSize: '10rem',
+              display: 'flex',
+              textAlign: 'center',
+              justifyContent: 'center',
+              alignItems: 'center',
+              fontWeight: '700',
+              transform: 'translateY(-50%)',
+              fontFamily: `'Source Sans Pro', sans-serif`,
+            }}
+            initial={{ y: 0, opacity: [0, 0.7] }}
+            animate={{ y: '-700px', opacity: [1, 0.9, 0.8, 0] }}
+            transition={{ duration: 1.7, delay: 0.5 }}
+          >
+            Welcome to my world
+          </motion.div>
+          <Left>
+            <Title>
+              <motion.p
+                initial={{ y: '100px', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 1.5 }}
+              >
+                Shivam
+              </motion.p>
 
-            <motion.p
-              initial={{ y: '100px', opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1.2 }}
-            >
-              Mishra<PurpleDot>.</PurpleDot>
-            </motion.p>
-            <motion.p
-              initial={{
-                scale: 0,
-                size: 50,
-                y: '100px',
-                opacity: 0,
-              }}
-              animate={{ scale: [0, 1], size: 100, y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1.2 }}
-            >
-              <BottomLine />
-            </motion.p>
-          </Title>
+              <motion.p
+                initial={{ y: '100px', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 2, duration: 1.2 }}
+              >
+                Mishra<PurpleDot>.</PurpleDot>
+              </motion.p>
+              <motion.p
+                initial={{
+                  scale: 0,
+                  size: 50,
+                  y: '100px',
+                  opacity: 0,
+                }}
+                animate={{ scale: [0, 1], size: 100, y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 1.2 }}
+              >
+                <BottomLine />
+              </motion.p>
+            </Title>
 
-          <SocialLinks>
-            <div>
-              <a href=''>
-                <i class='fab fa-linkedin'></i>
-              </a>
-            </div>
-            <div>
-              <a href=''>
-                <i class='fab fa-github'></i>
-              </a>
-            </div>
-            <div>
-              <a href=''>
-                <i class='fab fa-instagram-square'></i>
-              </a>
-            </div>
-          </SocialLinks>
-        </Left>
-        <Right>
-          <Info>
-            <motion.p
-              initial={{ y: '100px', opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.9 }}
-            >
-              - Introduction
-            </motion.p>
-            <motion.h3
-              initial={{ y: '100px', opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1.2 }}
-            >
-              Front end developer, Designer, Mumbai.
-            </motion.h3>
-            <motion.p
-              initial={{ y: '100px', opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1.2 }}
-            >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
-              reiciendis facere nam aliquam hic, nulla quasi natus temporibus
-              perferendis exc
-            </motion.p>
-            <motion.div
-              initial={{ y: '100px', opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 1.2 }}
-            >
-              <button href=''>Resume</button>
-              <i class='fas fa-arrow-right'></i>
-            </motion.div>
-          </Info>
-        </Right>
-      </MainSection>
-    </Container>
+            <SocialLinks>
+              <div>
+                <a href=''>
+                  <i class='fab fa-linkedin'></i>
+                </a>
+              </div>
+              <div>
+                <a href=''>
+                  <i class='fab fa-github'></i>
+                </a>
+              </div>
+              <div>
+                <a href=''>
+                  <i class='fab fa-instagram-square'></i>
+                </a>
+              </div>
+            </SocialLinks>
+          </Left>
+          <Right>
+            <Info>
+              <motion.p
+                initial={{ y: '100px', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 2.1 }}
+              >
+                - Introduction
+              </motion.p>
+              <motion.h3
+                initial={{ y: '100px', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 2.5 }}
+              >
+                Front end developer, Designer, Mumbai.
+              </motion.h3>
+              <motion.p
+                initial={{ y: '100px', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 2.5 }}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+                reiciendis facere nam aliquam hic, nulla quasi natus temporibus
+                perferendis exc
+              </motion.p>
+              <motion.div
+                initial={{ y: '100px', opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 0.5, duration: 2.5 }}
+              >
+                <button href=''>Resume</button>
+                <i class='fas fa-arrow-right'></i>
+              </motion.div>
+            </Info>
+          </Right>
+        </MainSection>
+      </Container>
+      <Section2>
+        <QuotesSection>
+          <h4>Opportunities don't happen. You create them.</h4>
+          <div>-- Chris Grosser</div>
+        </QuotesSection>
+        <Skills></Skills>
+      </Section2>
+    </div>
   )
 }
 
@@ -167,15 +198,36 @@ const NavLinks = styled.ul`
   list-style: none;
 
   li {
+    position: relative;
     display: inline-block;
+    cursor: pointer;
 
     &:not(:last-child) {
       margin-right: 3.2rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      border-radius: 2px;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 5px;
+      background-color: #f20b53;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+      &:after {
+        width: 100%;
+      }
     }
   }
 `
 
 const MainSection = styled.div`
+  position: relative;
   padding-top: 5rem;
   margin-top: 5rem;
   width: 100%;
@@ -226,6 +278,10 @@ const SocialLinks = styled.div`
   a {
     text-decoration: none;
     color: #f5f5f5;
+
+    &:hover {
+      color: #f20b53;
+    }
   }
   div {
     &:not(:last-child) {
@@ -277,7 +333,7 @@ const Info = styled.div`
 
 /// WIP
 const WorkInProgress = styled.div`
-  position: absolute;
+  position: fixed;
   background-color: #f20b53;
   top: 0;
   left: 50%;
@@ -286,3 +342,37 @@ const WorkInProgress = styled.div`
   border-bottom-left-radius: 4px;
   border-bottom-right-radius: 4px;
 `
+
+//Section 2
+
+const Section2 = styled.div`
+  height: 100vh;
+  background-color: #140444;
+`
+
+const QuotesSection = styled.div`
+  position: relative;
+  margin: 0 auto;
+  padding-top: 2rem;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h4 {
+    font-size: 4rem;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+    color: #f20b53;
+  }
+  div {
+    color: #f5f5f5;
+    position: absolute;
+    right: 6rem;
+    bottom: -5px;
+  }
+`
+
+const Skills = styled.div``
