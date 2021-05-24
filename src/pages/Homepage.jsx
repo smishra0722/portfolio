@@ -93,7 +93,7 @@ const Container = styled.div`
 `
 
 const Header = styled.nav`
-  max-width: 1440px;
+  max-width: 74%;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -133,7 +133,7 @@ const MainSection = styled.div`
   padding-top: 5rem;
   margin-top: 5rem;
   width: 100%;
-  max-width: 1440px;
+  max-width: 75%;
   height: 80%;
 
   display: flex;
