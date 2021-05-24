@@ -5,8 +5,8 @@ import { runCanvas } from '../script'
 import { ReactComponent as BottomImage } from '../svgs/BottomCircle.svg'
 import { ReactComponent as RightOval } from '../svgs/RightOval.svg'
 import { ReactComponent as User } from '../svgs/user.svg'
-
 import { motion } from 'framer-motion'
+
 const Homepage = () => {
   useEffect(() => {
     runCanvas()
@@ -38,9 +38,35 @@ const Homepage = () => {
       <MainSection>
         <Left>
           <Title>
-            Shivam
-            <br /> Mishra<PurpleDot>.</PurpleDot>
+            <motion.p
+              initial={{ y: '100px', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              Shivam
+            </motion.p>
+
+            <motion.p
+              initial={{ y: '100px', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1.2 }}
+            >
+              Mishra<PurpleDot>.</PurpleDot>
+            </motion.p>
+            <motion.p
+              initial={{
+                scale: 0,
+                size: 50,
+                y: '100px',
+                opacity: 0,
+              }}
+              animate={{ scale: [0, 1], size: 100, y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1.2 }}
+            >
+              <BottomLine />
+            </motion.p>
           </Title>
+
           <SocialLinks>
             <div>
               <a href=''>
@@ -61,17 +87,37 @@ const Homepage = () => {
         </Left>
         <Right>
           <Info>
-            <p>- Introduction</p>
-            <h3>Front end developer, Designer, Mumbai.</h3>
-            <p>
+            <motion.p
+              initial={{ y: '100px', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 0.9 }}
+            >
+              - Introduction
+            </motion.p>
+            <motion.h3
+              initial={{ y: '100px', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1.2 }}
+            >
+              Front end developer, Designer, Mumbai.
+            </motion.h3>
+            <motion.p
+              initial={{ y: '100px', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1.2 }}
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
               reiciendis facere nam aliquam hic, nulla quasi natus temporibus
               perferendis exc
-            </p>
-            <div>
+            </motion.p>
+            <motion.div
+              initial={{ y: '100px', opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1.2 }}
+            >
               <button href=''>Resume</button>
               <i class='fas fa-arrow-right'></i>
-            </div>
+            </motion.div>
           </Info>
         </Right>
       </MainSection>
@@ -159,16 +205,18 @@ const Title = styled.div`
   line-height: 90%;
   font-family: 'Source Sans Pro', sans-serif;
 
-  &:after {
-    position: absolute;
-    bottom: -1.7rem;
-    left: 0.5rem;
-    content: '';
-    height: 10px;
-    width: 20%;
-    background-color: #6c63ff;
-    border-radius: 2px;
-  }
+  /* &:after {
+  } */
+`
+const BottomLine = styled.div`
+  position: absolute;
+  bottom: -1.7rem;
+  left: 0.5rem;
+  content: '';
+  height: 10px;
+  width: 20%;
+  background-color: #6c63ff;
+  border-radius: 2px;
 `
 
 const SocialLinks = styled.div`
