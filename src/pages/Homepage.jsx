@@ -141,7 +141,7 @@ const NavLink = styled(Link)`
   &::after {
     content: '';
     position: absolute;
-    border-radius: 2px;
+    border-radius: 1px;
     bottom: -5px;
     left: 0;
     width: 0;
