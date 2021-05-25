@@ -51,7 +51,7 @@ const Homepage = () => {
           <Suspense
             fallback={
               <LoadingDiv>
-                Loading....
+                LOADING
                 <motion.div
                   initial={{ width: '10%' }}
                   animate={{ width: '100%' }}
